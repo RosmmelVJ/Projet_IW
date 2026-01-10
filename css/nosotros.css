@@ -1,0 +1,447 @@
+/* ============================================
+   SECCIÓN NOSOTROS - ESTILOS INDEPENDIENTES
+   ============================================ */
+
+.nosotros {
+    background-color: var(--bg-light);
+    padding: 50px 0 0;
+    min-height: 0vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    scroll-margin-top: 0;
+}
+
+.nosotros-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 0;
+    flex: 1;
+}
+
+/* Div superior: Título y Subtítulo */
+.nosotros-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    opacity: 0;
+    transform: translateY(-30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.nosotros-header.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.nosotros-header h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.nosotros-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: var(--secondary-color);
+    border-radius: 2px;
+}
+
+.nosotros-header .subtitle {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-top: 0.75rem;
+    font-weight: 400;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+/* Div inferior: Párrafo e Imagen */
+.nosotros-content {
+    display: grid;
+    grid-template-columns: 1fr 520px;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.nosotros-text {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s ease-out 0.3s, transform 0.8s ease-out 0.3s;
+}
+
+.nosotros-text.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.nosotros-text {
+    text-align: left;
+}
+
+.nosotros-text .company-name {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.nosotros-text .company-name .iron {
+    color: var(--secondary-color);
+}
+
+.nosotros-text .company-name .weld {
+    color: var(--primary-color);
+}
+
+.nosotros-text p {
+    font-size: 1rem;
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.nosotros-image-wrapper {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.8s ease-out 0.3s, transform 0.8s ease-out 0.3s;
+}
+
+.nosotros-image-wrapper.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.nosotros-image {
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nosotros-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer amarillo */
+.nosotros-footer {
+    background-color: var(--secondary-color);
+    width: 100%;
+    padding: 1.5rem 2rem;
+    border-radius: 0;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out 0.6s, transform 0.8s ease-out 0.6s;
+    margin-top: 4rem;
+}
+
+.nosotros-footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+    padding: 0 20px;
+}
+
+.footer-image img {
+    width: 90%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.footer-image img:hover {
+    transform: scale(1.05);
+}
+
+.footer-mision h4,
+.footer-vision h4 {
+    font-size: 1.5rem;
+    color: black;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.footer-mision h4 .titulo,
+.footer-vision h4 .titulo {
+    font-weight: 700;
+}
+
+.footer-mision h4 i,
+.footer-vision h4 i {
+    font-size: 1.4rem;
+    color: black;
+}
+
+.footer-mision p,
+.footer-vision p {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    line-height: 1.6;
+    text-align: justify;
+    margin: 0;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: perspective(1000px) rotateX(5deg) rotateY(-5deg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4), 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================
+   RESPONSIVE - TABLET
+   ============================================ */
+@media (max-width: 992px) {
+    .nosotros {
+        padding: 50px 0 0;
+    }
+
+    .nosotros-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .nosotros-header h2 {
+        font-size: 2rem;
+    }
+
+    .nosotros-header .subtitle {
+        font-size: 1rem;
+    }
+
+    .nosotros-text {
+        order: 1;
+        text-align: left;
+    }
+
+    .nosotros-image-wrapper {
+        order: 2;
+        display: flex;
+        justify-content: center;
+    }
+
+    .nosotros-text .company-name {
+        font-size: 1.75rem;
+    }
+
+    .nosotros-text p {
+        font-size: 0.95rem;
+    }
+
+    .nosotros-footer {
+        padding: 1.5rem 1rem;
+    }
+
+    .nosotros-footer-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 15px;
+    }
+
+    .footer-image img {
+        max-width: 100%;
+        border-radius: 10px;
+        border-width: 2px;
+    }
+
+    .footer-mision h4,
+    .footer-vision h4 {
+        font-size: 1.3rem;
+        justify-content: center;
+        gap: 0.6rem;
+        color: black;
+    }
+
+    .footer-mision h4 i,
+    .footer-vision h4 i {
+        color: black;
+    }
+
+    .footer-mision p,
+    .footer-vision p {
+        font-size: 0.85rem;
+        color: var(--text-color);
+    }
+    .card {
+        padding: 1.2rem;
+        transform: none;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+    }
+}
+
+/* ============================================
+   RESPONSIVE - MÓVIL
+   ============================================ */
+@media (max-width: 768px) {
+    .nosotros {
+        padding: 50px 0 0;
+    }
+
+    .nosotros-container {
+        padding: 0 15px;
+    }
+
+    .nosotros-content {
+        gap: 2rem;
+    }
+
+    .nosotros-header {
+        margin-bottom: 3rem;
+    }
+
+    .nosotros-header h2 {
+        font-size: 1.75rem;
+    }
+
+    .nosotros-header .subtitle {
+        font-size: 0.95rem;
+    }
+
+    .nosotros-text {
+        text-align: left;
+    }
+
+    .nosotros-text .company-name {
+        font-size: 1.5rem;
+    }
+
+    .nosotros-text p {
+        font-size: 0.9rem;
+    }
+
+    /* Ocultar imagen en móvil */
+    .nosotros-image-wrapper {
+        display: none;
+    }
+
+    .nosotros-footer {
+        padding: 1rem 1rem;
+        margin-top: 2.5rem;
+    }
+
+    .nosotros-footer-content {
+        padding: 0 15px;
+    }
+
+    .footer-image img {
+        border-radius: 8px;
+        border-width: 2px;
+    }
+
+    .footer-mision h4,
+    .footer-vision h4 {
+        font-size: 1.1rem;
+        gap: 0.5rem;
+        color: black;
+    }
+
+    .footer-mision h4 i,
+    .footer-vision h4 i {
+        color: black;
+    }
+
+    .footer-mision p,
+    .footer-vision p {
+        font-size: 0.8rem;
+        color: var(--text-color);
+    }
+
+    .card {
+        padding: 1rem;
+        transform: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .card:hover {
+        transform: translateY(-2px);
+    }
+      
+}
+
+@media (max-width: 480px) {
+    .nosotros {
+        padding: 60px 0 0;
+    }
+
+    .nosotros-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .nosotros-header .subtitle {
+        font-size: 0.9rem;
+    }
+
+    .nosotros-text .company-name {
+        font-size: 1.3rem;
+    }
+
+    .nosotros-text p {
+        font-size: 0.85rem;
+    }
+
+    .nosotros-footer {
+        padding: 2rem 1rem;
+    }
+
+    .footer-image img {
+        border-radius: 6px;
+        border-width: 1px;
+    }
+
+    .footer-mision h4,
+    .footer-vision h4 {
+        font-size: 1rem;
+        gap: 0.4rem;
+        color: black;
+    }
+
+    .footer-mision h4 i,
+    .footer-vision h4 i {
+        color: black;
+    }
+
+    .footer-mision p,
+    .footer-vision p {
+        font-size: 0.75rem;
+        color: black;
+    }
+
+    .card {
+        padding: 0.8rem;
+    }
+}
+

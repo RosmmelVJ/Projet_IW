@@ -1,66 +1,341 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IRONWELD</title>
-    <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
+    <meta name="description" content="IronWeld - Soluciones profesionales en soldadura y metalurgia">
+    <title>IronWeld - Inicio</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/nosotros.css">
+    <link rel="stylesheet" href="css/servicios.css">
+    <link rel="stylesheet" href="css/productos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-        <!-- Slider main container -->
-    <section class="swiper">
-        <div class="swiper-wrapper">
-        <!-- Slides -->
-            <div class="swiper-slide">
-                <img src="images/slider/1.jpg" alt="">
-                <div class="item">
-                        <h1>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        </h1>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia suscipit neque quasi quos recusandae vero hic fuga, reprehenderit voluptates! Vel eaque commodi quaerat ea iure debitis ex ab animi quasi.
-                        </p>
+    <!-- Barra de Navegación -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <!-- Logo -->
+                    <a href="#inicio" class="logo">
+                        <img src="img/logo/01.png" alt="IronWeld Logo">
+                    </a>
+                    
+                    <!-- Menú Desktop -->
+                    <ul class="nav-menu">
+                        <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                        <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+                        <li><a href="#servicios" class="nav-link">Servicios</a></li>
+                        <li><a href="#productos" class="nav-link">Productos</a></li>
+                        <li><a href="#multimedia" class="nav-link">Multimedia</a></li>
+                        <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                    </ul>
+                    
+                    <!-- Botón Hamburguesa -->
+                    <button class="hamburger" aria-label="Menú" aria-expanded="false">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
                 </div>
             </div>
-            <div class="swiper-slide">
-                <img src="images/slider/1.jpg" alt="">
-                <div class="item">
-                        <h1>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        </h1>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia suscipit neque quasi quos recusandae vero hic fuga, reprehenderit voluptates! Vel eaque commodi quaerat ea iure debitis ex ab animi quasi.
-                        </p>
+        </nav>
+    </header>
+
+    <!-- Overlay para móvil/tablet -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Sección Inicio - Carrusel -->
+    <section id="inicio" class="section inicio">
+        <div class="carousel-container">
+            <div class="carousel-wrapper">
+                <div class="carousel-slides">
+                    <!-- Slide 1 -->
+                    <div class="carousel-slide active">
+                        <img src="img/slider/1.jpg" alt="IronWeld - Soluciones profesionales">
+                        <div class="slide-content">
+                            <h1>Bienvenido a IronWeld</h1>
+                            <p>Soluciones profesionales en soldadura y metalurgia</p>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="carousel-slide">
+                        <img src="img/slider/1.jpg" alt="IronWeld - Calidad y experiencia">
+                        <div class="slide-content">
+                            <h1>Calidad y Experiencia</h1>
+                            <p>Años de experiencia en el sector metalúrgico</p>
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="carousel-slide">
+                        <img src="img/slider/1.jpg" alt="IronWeld - Innovación tecnológica">
+                        <div class="slide-content">
+                            <h1>Innovación Tecnológica</h1>
+                            <p>Tecnología de vanguardia para mejores resultados</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="swiper-slide">
-                <img src="images/slider/1.jpg" alt="">
-                <div class="item">
-                        <h1>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        </h1>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia suscipit neque quasi quos recusandae vero hic fuga, reprehenderit voluptates! Vel eaque commodi quaerat ea iure debitis ex ab animi quasi.
-                        </p>
-                </div>
+            <!-- Botones de navegación -->
+            <button class="carousel-btn carousel-btn-prev" aria-label="Imagen anterior">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="carousel-btn carousel-btn-next" aria-label="Imagen siguiente">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <!-- Indicadores -->
+            <div class="carousel-indicators">
+                <span class="indicator active" data-slide="0"></span>
+                <span class="indicator" data-slide="1"></span>
+                <span class="indicator" data-slide="2"></span>
             </div>
         </div>
-
-        </div>
-
-        <!-- If we need pagination -->
-        <div class="swiper-pagination"></div>
-    
-        <!-- If we need navigation buttons -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
     </section>
-    
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Sección Nosotros -->
+    <section id="nosotros" class="section nosotros">
+        <div class="nosotros-container">
+            <!-- Div superior: Título y Subtítulo -->
+            <div class="nosotros-header">
+                <h2>Nosotros</h2>
+                <p class="subtitle">Con más de 10 años de experiencia en la fabricación y el mantenimiento de equipos.</p>
+            </div>
+            
+            <!-- Div inferior: Párrafo e Imagen -->
+            <div class="nosotros-content">
+                <div class="nosotros-text">
+                    <h3 class="company-name">
+                        <span class="iron">IRON</span> <span class="weld">WELD</span>
+                    </h3>
+                    <p>Iron Weld S.A.C. es una empresa peruana fundada en el año 2013, especializada en la fabricación, mantenimiento y reparación de maquinaria pesada para la industria minera. Nuestro compromiso es brindar soluciones innovadoras y de alta calidad que satisfagan las necesidades de nuestros clientes.</p>
+                    <p>Nos esforzamos por ser líderes en el mercado de equipos para minería subterránea, contribuyendo al desarrollo sostenible del sector minero peruano.</p>
+                </div>
+                <div class="nosotros-image-wrapper">
+                    <img src="img/slider/1.jpg" alt="Equipo de IronWeld" class="nosotros-image">
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer amarillo con call to action -->
+        <div class="nosotros-footer">
+            <div class="nosotros-footer-content">
+                <div class="footer-image">
+                    <img src="img/section_about/abaout_1.png" alt="Imagen de Misión y Visión">
+                </div>
+                <div class="footer-mision card">
+                    <h4><i class="fas fa-bullseye"></i> <span class="titulo">Misión</span></h4>
+                    <p>Ser el socio estratégico de la industria minera, ofreciendo soluciones innovadoras y de calidad en la fabricación, mantenimiento y reparación de maquinaria pesada, mejorando la productividad y eficiencia de nuestros clientes bajo los más altos estándares de seguridad y sostenibilidad.</p>
+                </div>
+                <div class="footer-vision card">
+                    <h4><i class="fas fa-eye"></i> <span class="titulo">Visión</span></h4>
+                    <p>Ser líderes en soluciones integrales para la minería a nivel nacional e internacional, ampliando nuestra presencia global con innovación y adaptabilidad. iendo un pilar de la minería sostenible, aportando equipos de última tecnología que transformen la industria.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Servicios -->
+    <section id="servicios" class="section servicios">
+        <div class="servicios-container">
+            <!-- Header: Título y Texto Introductorio -->
+            <div class="servicios-header">
+                <h2>
+                    <span class="nosotros-word">NUESTROS</span> <span class="servicios-word">SERVICIOS</span>
+                </h2>
+                <p class="intro-text">Ofrecemos una gama completa de servicios diseñados para optimizar el rendimiento de tus operaciones industriales y mineras.</p>
+            </div>
+
+            <!-- Grid de Servicios -->
+            <div class="servicios-grid">
+                <!-- Servicio 1 -->
+                <div class="servicio-item">
+                    <div class="servicio-icon">
+                        <i class="fas fa-ruler-combined"></i>
+                    </div>
+                    <div class="servicio-content">
+                        <h3>Fabricación a medida</h3>
+                        <p>Creación de equipos y componentes según especificaciones requeridas.</p>
+                    </div>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="servicio-item">
+                    <div class="servicio-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="servicio-content">
+                        <h3>Mantenimiento preventivo</h3>
+                        <p>Inspecciones y mantenimiento programado de forma regular.</p>
+                    </div>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="servicio-item">
+                    <div class="servicio-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="servicio-content">
+                        <h3>Reparaciones</h3>
+                        <p>Servicios rápidos y eficientes para reparar equipos averiados.</p>
+                    </div>
+                </div>
+
+                <!-- Servicio 4 -->
+                <div class="servicio-item">
+                    <div class="servicio-icon">
+                        <i class="fas fa-wrench"></i>
+                    </div>
+                    <div class="servicio-content">
+                        <h3>Reacondicionamiento</h3>
+                        <p>Restauración y modificación de equipos segun elrequerimiento.</p>
+                    </div>
+                </div>
+
+                <!-- Servicio 5 -->
+                <div class="servicio-item">
+                    <div class="servicio-icon">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <div class="servicio-content">
+                        <h3>Ingeniería y consultoría</h3>
+                        <p>Gestión de proyectos y asesoramiento para el uso óptimo.</p>
+                    </div>
+                </div>
+
+                <!-- Servicio 6 -->
+                <div class="servicio-item">
+                    <div class="servicio-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div class="servicio-content">
+                        <h3>Soporte y post venta</h3>
+                        <p>Asistencia técnica continua y servicios postventa que se requiera.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer amarillo -->
+        <div class="servicios-footer">
+            <div class="servicios-footer-content">
+                <div class="footer-text">
+                    <h4>Buscamos la mejor opción para tu empresa</h4>
+                    
+                </div>
+                <a href="#contacto" class="footer-btn">Contactanos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Productos -->
+    <section id="productos" class="section productos">
+        <div class="productos-container">
+            <!-- Header: Título y Descripción -->
+            <div class="productos-header">
+                <h2>
+                    <span class="productos-word-start">PRODUCT</span><span class="productos-word-end">OS</span>
+                </h2>
+                <p class="intro-text">Ofrecemos una amplia gama de productos de alta calidad, diseñados para satisfacer las necesidades específicas de las operaciones industriales y mineras.</p>
+            </div>
+
+            <!-- Tabs de Categorías -->
+            <div class="productos-tabs">
+                <button class="productos-tab active" data-tab="equipos-mineros">
+                    <i class="fas fa-tractor"></i>
+                </button>
+                <button class="productos-tab" data-tab="componentes">
+                    <i class="fas fa-cog"></i>
+                </button>
+                <button class="productos-tab" data-tab="herramientas">
+                    <i class="fas fa-tools"></i>
+                </button>
+                <button class="productos-tab" data-tab="repuestos">
+                    <i class="fas fa-wrench"></i>
+                </button>
+            </div>
+
+            <!-- Contenido de los Tabs -->
+            <div class="productos-content">
+                <!-- Tab 1: Equipos Mineros -->
+                <div class="productos-tab-content active" id="equipos-mineros">
+                    <div class="productos-content-wrapper">
+                        <div class="productos-text">
+                            <h3>Equipos mineros</h3>
+                            <p>Fabricamos equipos mineros robustos y confiables, diseñados para mejorar la eficiencia y seguridad en tus operaciones. Desde maquinaria pesada hasta soluciones especializadas, nuestros equipos están fabricados con tecnología avanzada para soportar las condiciones más exigentes de la minería, maximizando la productividad en todo momento.</p>
+                            <p>Ofrecemos una amplia gama de productos, incluyendo perforadoras, cargadores, transportadores y más, todos garantizando durabilidad y rendimiento en cada etapa de tu operación minera.</p>
+                        </div>
+                        <div class="productos-image-wrapper">
+                            <img src="img/slider/1.jpg" alt="Equipos mineros" class="productos-image">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 2: Componentes -->
+                <div class="productos-tab-content" id="componentes">
+                    <div class="productos-content-wrapper">
+                        <div class="productos-text">
+                            <h3>Componentes industriales</h3>
+                            <p>Nuestros componentes industriales están diseñados con los más altos estándares de calidad y precisión. Fabricamos componentes especializados que se adaptan a las necesidades específicas de cada proyecto, garantizando un rendimiento óptimo y una larga vida útil.</p>
+                            <p>Desde sistemas hidráulicos hasta componentes mecánicos de precisión, ofrecemos soluciones que mejoran la eficiencia operativa y reducen los tiempos de mantenimiento.</p>
+                        </div>
+                        <div class="productos-image-wrapper">
+                            <img src="img/slider/1.jpg" alt="Componentes industriales" class="productos-image">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 3: Herramientas -->
+                <div class="productos-tab-content" id="herramientas">
+                    <div class="productos-content-wrapper">
+                        <div class="productos-text">
+                            <h3>Herramientas especializadas</h3>
+                            <p>Contamos con una línea completa de herramientas especializadas para la industria minera y metalúrgica. Cada herramienta está diseñada para cumplir con los más altos estándares de seguridad y eficiencia, facilitando las operaciones más complejas.</p>
+                            <p>Nuestras herramientas son fabricadas con materiales de primera calidad, asegurando resistencia y durabilidad en los ambientes más exigentes de la industria.</p>
+                        </div>
+                        <div class="productos-image-wrapper">
+                            <img src="img/slider/1.jpg" alt="Herramientas especializadas" class="productos-image">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 4: Repuestos -->
+                <div class="productos-tab-content" id="repuestos">
+                    <div class="productos-content-wrapper">
+                        <div class="productos-text">
+                            <h3>Repuestos y accesorios</h3>
+                            <p>Ofrecemos una amplia gama de repuestos y accesorios para mantener tus equipos en óptimas condiciones. Todos nuestros repuestos son fabricados con los mismos estándares de calidad que nuestros equipos originales, garantizando compatibilidad y rendimiento.</p>
+                            <p>Mantenemos un inventario completo de repuestos para reducir los tiempos de inactividad y asegurar la continuidad de tus operaciones mineras e industriales.</p>
+                        </div>
+                        <div class="productos-image-wrapper">
+                            <img src="img/slider/1.jpg" alt="Repuestos y accesorios" class="productos-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Multimedia -->
+    <section id="multimedia" class="section multimedia">
+        <div class="container">
+            <h2>Multimedia</h2>
+            <p>Galería de imágenes y videos.</p>
+        </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section id="contacto" class="section contacto">
+        <div class="container">
+            <h2>Contacto</h2>
+            <p>Ponte en contacto con nosotros.</p>
+        </div>
+    </section>
+
     <script src="js/script.js"></script>
+    <script src="js/nosotros.js"></script>
+    <script src="js/servicios.js"></script>
+    <script src="js/productos.js"></script>
 </body>
 </html>
+
