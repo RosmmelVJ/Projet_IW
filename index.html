@@ -9,7 +9,10 @@
     <link rel="stylesheet" href="css/nosotros.css">
     <link rel="stylesheet" href="css/servicios.css">
     <link rel="stylesheet" href="css/productos.css">
+    <link rel="stylesheet" href="css/multimedia.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
 <body>
     <!-- Barra de Navegación -->
@@ -243,15 +246,19 @@
             <div class="productos-tabs">
                 <button class="productos-tab active" data-tab="equipos-mineros">
                     <i class="fas fa-tractor"></i>
+                    <span class="tab-label">Equipos</span>
                 </button>
                 <button class="productos-tab" data-tab="componentes">
                     <i class="fas fa-cog"></i>
+                    <span class="tab-label">Sistemas</span>
                 </button>
                 <button class="productos-tab" data-tab="herramientas">
                     <i class="fas fa-tools"></i>
+                    <span class="tab-label">Componentes</span>
                 </button>
                 <button class="productos-tab" data-tab="repuestos">
                     <i class="fas fa-wrench"></i>
+                    <span class="tab-label">Repuestos</span>
                 </button>
             </div>
 
@@ -261,9 +268,9 @@
                 <div class="productos-tab-content active" id="equipos-mineros">
                     <div class="productos-content-wrapper">
                         <div class="productos-text">
-                            <h3>Equipos mineros</h3>
-                            <p>Fabricamos equipos mineros robustos y confiables, diseñados para mejorar la eficiencia y seguridad en tus operaciones. Desde maquinaria pesada hasta soluciones especializadas, nuestros equipos están fabricados con tecnología avanzada para soportar las condiciones más exigentes de la minería, maximizando la productividad en todo momento.</p>
-                            <p>Ofrecemos una amplia gama de productos, incluyendo perforadoras, cargadores, transportadores y más, todos garantizando durabilidad y rendimiento en cada etapa de tu operación minera.</p>
+                            <h3>Equipos de perforación minera</h3>
+                            <p>Nos especializamos en la fabricación de equipos de perforación y maquinaria minera, diseñados para operar en condiciones extremas y garantizar máxima eficiencia en cada proyecto. Cumpliendo altos estándares de calidad y seguridad, ofreciendo soluciones confiables para la exploración y explotación minera.</p>
+                            <p>Además, desarrollamos maquinarias de perforación completas, desde el diseño hasta la automatización, adaptadas a las necesidades del sector.</p>
                         </div>
                         <div class="productos-image-wrapper">
                             <img src="img/slider/1.jpg" alt="Equipos mineros" class="productos-image">
@@ -275,9 +282,9 @@
                 <div class="productos-tab-content" id="componentes">
                     <div class="productos-content-wrapper">
                         <div class="productos-text">
-                            <h3>Componentes industriales</h3>
-                            <p>Nuestros componentes industriales están diseñados con los más altos estándares de calidad y precisión. Fabricamos componentes especializados que se adaptan a las necesidades específicas de cada proyecto, garantizando un rendimiento óptimo y una larga vida útil.</p>
-                            <p>Desde sistemas hidráulicos hasta componentes mecánicos de precisión, ofrecemos soluciones que mejoran la eficiencia operativa y reducen los tiempos de mantenimiento.</p>
+                            <h3>Sistemas industriales personalizados</h3>
+                            <p>Desarrollamos sistemas mecánicos personalizados según los requerimientos, adaptándonos a las necesidades específicas de la industria. Nuestro enfoque combina innovación y precisión para crear soluciones que optimicen procesos productivos y aseguren un rendimiento constante en entornos exigentes.</p>
+                            <p>También ofrecemos la fabricación de máquinas industriales automatizadas, para mejorar la productividad y eficiencia de su operación.</p>
                         </div>
                         <div class="productos-image-wrapper">
                             <img src="img/slider/1.jpg" alt="Componentes industriales" class="productos-image">
@@ -289,9 +296,9 @@
                 <div class="productos-tab-content" id="herramientas">
                     <div class="productos-content-wrapper">
                         <div class="productos-text">
-                            <h3>Herramientas especializadas</h3>
-                            <p>Contamos con una línea completa de herramientas especializadas para la industria minera y metalúrgica. Cada herramienta está diseñada para cumplir con los más altos estándares de seguridad y eficiencia, facilitando las operaciones más complejas.</p>
-                            <p>Nuestras herramientas son fabricadas con materiales de primera calidad, asegurando resistencia y durabilidad en los ambientes más exigentes de la industria.</p>
+                            <h3>Componentes hidráulicos y mecánicos</h3>
+                            <p>Ofrecemos una amplia gama de componentes esenciales para maquinaria pesada, incluyendo cilindros hidráulicos, motores hidráulicos, perforadoras y más. Cada pieza está fabricada con materiales de alta resistencia y tecnología avanzada, garantizando durabilidad y un desempeño óptimo en operaciones continuas.</p>
+                            <p>Complementamos con instalaciones hidráulicas completas, asegurando que cada componente funcione de forma eficiente dentro de su sistema.</p>
                         </div>
                         <div class="productos-image-wrapper">
                             <img src="img/slider/1.jpg" alt="Herramientas especializadas" class="productos-image">
@@ -303,9 +310,9 @@
                 <div class="productos-tab-content" id="repuestos">
                     <div class="productos-content-wrapper">
                         <div class="productos-text">
-                            <h3>Repuestos y accesorios</h3>
-                            <p>Ofrecemos una amplia gama de repuestos y accesorios para mantener tus equipos en óptimas condiciones. Todos nuestros repuestos son fabricados con los mismos estándares de calidad que nuestros equipos originales, garantizando compatibilidad y rendimiento.</p>
-                            <p>Mantenemos un inventario completo de repuestos para reducir los tiempos de inactividad y asegurar la continuidad de tus operaciones mineras e industriales.</p>
+                            <h3>Accesorios y repuestos originales</h3>
+                            <p>Contamos con un catálogo de accesorios y repuestos originales, como brocas de diamantina, ejes de perforación y piezas críticas para mantener la operatividad de sus equipos. Nuestro compromiso es asegurar disponibilidad y calidad certificada para reducir tiempos de inactividad y maximizar la productividad.</p>
+                            <p>Respaldamos cada repuesto con servicios de instalación y soporte técnico especializado, garantizando un rendimiento óptimo en campo.</p>
                         </div>
                         <div class="productos-image-wrapper">
                             <img src="img/slider/1.jpg" alt="Repuestos y accesorios" class="productos-image">
@@ -318,9 +325,77 @@
 
     <!-- Sección Multimedia -->
     <section id="multimedia" class="section multimedia">
-        <div class="container">
-            <h2>Multimedia</h2>
-            <p>Galería de imágenes y videos.</p>
+        <div class="multimedia-container">
+            <!-- Header: Título y Descripción -->
+            <div class="multimedia-header">
+                <h2>
+                    <span class="multimedia-word-start">MULTI</span><span class="multimedia-word-end">MEDIA</span>
+                </h2>
+                <p class="intro-text">Explora nuestra galería de proyectos, equipos y soluciones industriales.</p>
+            </div>
+
+            <!-- Carrusel Swiper -->
+            <div class="multimedia-carousel-wrapper">
+                <div class="swiper multimedia-swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide">
+                            <div class="multimedia-slide-content">
+                                <img src="img/galery/04.jpg" alt="Imagen 1" class="multimedia-slide-image">
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide">
+                            <div class="multimedia-slide-content">
+                                <img src="img/galery/04.jpg" alt="Imagen 2" class="multimedia-slide-image">
+                            </div>
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="swiper-slide">
+                            <div class="multimedia-slide-content">
+                                <img src="img/galery/04.jpg" alt="Imagen 3" class="multimedia-slide-image">
+                            </div>
+                        </div>
+                        <!-- Slide 4 -->
+                        <div class="swiper-slide">
+                            <div class="multimedia-slide-content">
+                                <img src="img/galery/04.jpg" alt="Imagen 4" class="multimedia-slide-image">
+                            </div>
+                        </div>
+                        <!-- Slide 5 -->
+                        <div class="swiper-slide">
+                            <div class="multimedia-slide-content">
+                                <img src="img/galery/04.jpg" alt="Imagen 5" class="multimedia-slide-image">
+                            </div>
+                        </div>
+                        <!-- Slide 6 -->
+                        <div class="swiper-slide">
+                            <div class="multimedia-slide-content">
+                                <img src="img/galery/04.jpg" alt="Imagen 6" class="multimedia-slide-image">
+                            </div>
+                        </div>
+                        <!-- Slide 7 -->
+                        <div class="swiper-slide">
+                            <div class="multimedia-slide-content">
+                                <img src="img/galery/04.jpg" alt="Imagen 7" class="multimedia-slide-image">
+                            </div>
+                        </div>
+                        <!-- Slide 8 -->
+                        <div class="swiper-slide">
+                            <div class="multimedia-slide-content">
+                                <img src="img/galery/04.jpg" alt="Imagen 8" class="multimedia-slide-image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Botones de navegación personalizados -->
+                <button class="multimedia-carousel-btn multimedia-swiper-prev" aria-label="Anterior">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="multimedia-carousel-btn multimedia-swiper-next" aria-label="Siguiente">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
         </div>
     </section>
 
@@ -332,10 +407,13 @@
         </div>
     </section>
 
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>
     <script src="js/nosotros.js"></script>
     <script src="js/servicios.js"></script>
     <script src="js/productos.js"></script>
+    <script src="js/multimedia.js"></script>
 </body>
 </html>
 

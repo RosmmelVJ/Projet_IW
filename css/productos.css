@@ -5,12 +5,15 @@
 .productos {
     background-color: var(--bg-light);
     padding: 50px 0 0;
-    min-height: 100vh;
+    min-height: calc(100vh - 82px);
+    height: calc(100vh - 82px);
+    max-height: calc(100vh - 82px);
     display: flex;
     flex-direction: column;
     position: relative;
     overflow: hidden;
     scroll-margin-top: 0;
+    box-sizing: border-box;
 }
 
 .productos-container {
@@ -20,15 +23,18 @@
     flex: 1;
     display: flex;
     flex-direction: column;
+    min-height: 0;
+    overflow: hidden;
 }
 
 /* Header: Título y Descripción */
 .productos-header {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
     opacity: 0;
     transform: translateY(-30px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    flex-shrink: 0;
 }
 
 .productos-header.animate {
@@ -83,12 +89,14 @@
 .productos-tabs {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    margin-bottom: 3rem;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 4rem;
     flex-wrap: wrap;
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.8s ease-out 0.3s, transform 0.8s ease-out 0.3s;
+    flex-shrink: 0;
 }
 
 .productos-tabs.animate {
@@ -97,24 +105,39 @@
 }
 
 .productos-tab {
-    width: 80px;
-    height: 80px;
+    min-width: 140px;
+    height: 60px;
+    min-height: 50px;
     border: 2px solid #e0e0e0;
     background-color: var(--white);
     border-radius: 8px;
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
+    padding: 1.25rem 1rem;
     cursor: pointer;
     transition: var(--transition);
     position: relative;
     flex-shrink: 0;
+    gap: 0.75rem;
 }
 
 .productos-tab i {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: var(--text-light);
     transition: var(--transition);
+    flex-shrink: 0;
+}
+
+.productos-tab .tab-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-light);
+    text-align: center;
+    transition: var(--transition);
+    line-height: 1.2;
+    white-space: nowrap;
 }
 
 .productos-tab:hover {
@@ -127,6 +150,10 @@
     color: var(--secondary-color);
 }
 
+.productos-tab:hover .tab-label {
+    color: var(--secondary-color);
+}
+
 .productos-tab.active {
     border-color: var(--secondary-color);
     background-color: var(--secondary-color);
@@ -134,6 +161,10 @@
 }
 
 .productos-tab.active i {
+    color: var(--white);
+}
+
+.productos-tab.active .tab-label {
     color: var(--white);
 }
 
@@ -152,10 +183,12 @@
 /* Contenido de los Tabs */
 .productos-content {
     position: relative;
-    min-height: 400px;
+    flex: 1;
+    min-height: 0;
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.8s ease-out 0.6s, transform 0.8s ease-out 0.6s;
+    overflow-y: auto;
 }
 
 .productos-content.animate {
@@ -186,23 +219,24 @@
 .productos-content-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    gap: 3.5rem;
     align-items: center;
+    min-height: 0;
 }
 
 .productos-text {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
 }
 
 .productos-text h3 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 700;
     color: var(--primary-color);
     margin-bottom: 0.5rem;
     position: relative;
-    padding-bottom: 10px;
+    padding-bottom: 8px;
 }
 
 .productos-text h3::after {
@@ -217,9 +251,9 @@
 }
 
 .productos-text p {
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: var(--text-light);
-    line-height: 1.8;
+    line-height: 1.7;
     text-align: justify;
     margin: 0;
 }
@@ -229,21 +263,25 @@
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
+    overflow: hidden;
+    border-radius: 10px;
 }
 
 .productos-image {
-    width: 100%;
+    width: 90%;
     height: auto;
-    max-height: 400px;
+    max-height: 252px;
+    max-width: 90%;
     object-fit: cover;
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-left: auto;
 }
 
 .productos-image:hover {
-    transform: scale(1.02);
+    transform: scale(1.05);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
 }
 
@@ -253,6 +291,8 @@
 @media (max-width: 992px) {
     .productos {
         padding: 50px 0 0;
+        height: auto;
+        min-height: auto;
     }
 
     .productos-container {
@@ -272,21 +312,37 @@
     }
 
     .productos-tabs {
-        gap: 0.75rem;
+        gap: 1rem;
         margin-bottom: 2.5rem;
     }
 
     .productos-tab {
-        width: 70px;
-        height: 70px;
+        min-width: 120px;
+        min-height: 65px;
+        padding: 1rem 0.75rem;
+        flex-direction: row;
     }
 
     .productos-tab i {
-        font-size: 1.75rem;
+        font-size: 1.3rem;
+    }
+
+    .productos-tab .tab-label {
+        font-size: 0.85rem;
     }
 
     .productos-content-wrapper {
-        gap: 2rem;
+        gap: 3rem;
+    }
+
+    .productos-image-wrapper {
+        justify-content: flex-end;
+    }
+
+    .productos-image {
+        width: 90%;
+        max-width: 90%;
+        margin-left: auto;
     }
 
     .productos-text h3 {
@@ -304,6 +360,8 @@
 @media (max-width: 768px) {
     .productos {
         padding: 50px 0 0;
+        height: auto;
+        min-height: auto;
     }
 
     .productos-container {
@@ -329,13 +387,21 @@
     }
 
     .productos-tab {
-        width: 60px;
-        height: 60px;
-        flex: 0 0 calc(25% - 0.5rem);
+        min-width: 0;
+        width: calc(25% - 0.5rem);
+        min-height: 55px;
+        padding: 0.75rem 0.4rem;
+        flex: 1;
+        flex-direction: row;
+        gap: 0.5rem;
     }
 
     .productos-tab i {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
+    }
+
+    .productos-tab .tab-label {
+        font-size: 0.7rem;
     }
 
     .productos-content-wrapper {
@@ -349,6 +415,9 @@
 
     .productos-image-wrapper {
         order: 2;
+        overflow: hidden;
+        border-radius: 10px;
+        justify-content: center;
     }
 
     .productos-text h3 {
@@ -360,11 +429,18 @@
     }
 
     .productos-image {
-        max-height: 300px;
+        max-height: 225px;
+        width: 90%;
+        max-width: 90%;
     }
 }
 
 @media (max-width: 480px) {
+    .productos {
+        height: auto;
+        min-height: auto;
+    }
+
     .productos-header h2 {
         font-size: 1.5rem;
     }
@@ -374,12 +450,20 @@
     }
 
     .productos-tab {
-        width: 55px;
-        height: 55px;
+        min-width: 0;
+        width: calc(25% - 0.5rem);
+        min-height: 50px;
+        padding: 0.6rem 0.3rem;
+        flex-direction: row;
+        gap: 0.4rem;
     }
 
     .productos-tab i {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
+    }
+
+    .productos-tab .tab-label {
+        font-size: 0.65rem;
     }
 
     .productos-text h3 {
@@ -390,7 +474,15 @@
         font-size: 0.85rem;
     }
 
+    .productos-image-wrapper {
+        overflow: hidden;
+        border-radius: 10px;
+        justify-content: center;
+    }
+
     .productos-image {
-        max-height: 250px;
+        max-height: 198px;
+        width: 90%;
+        max-width: 90%;
     }
 }
