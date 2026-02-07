@@ -1,18 +1,25 @@
 /* ============================================
    SECCIÓN MULTIMEDIA - CARRUSEL
+   ESTILOS COMPLETAMENTE INDEPENDIENTES
    ============================================ */
 
-.multimedia {
+/* Encapsulación: Todos los estilos solo afectan a #multimedia */
+#multimedia.multimedia,
+section#multimedia.multimedia {
     background-color: var(--white);
-    padding: 50px 0;
-    min-height: 100vh;
+    padding: 40px 0;
+    min-height: unset;
+    height: calc(100vh - 50px);
+    max-height: 695px;
     display: flex;
     flex-direction: column;
     position: relative;
     scroll-margin-top: 0;
 }
 
-.multimedia-container {
+/* Contenedor principal */
+#multimedia .multimedia-container,
+section#multimedia .multimedia-container {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
@@ -22,15 +29,17 @@
 }
 
 /* Header: Título y Descripción */
-.multimedia-header {
+#multimedia .multimedia-header,
+section#multimedia .multimedia-header {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
     opacity: 0;
     transform: translateY(-30px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-.multimedia-header.animate {
+#multimedia .multimedia-header.animate,
+section#multimedia .multimedia-header.animate {
     opacity: 1;
     transform: translateY(0);
 }
@@ -46,15 +55,18 @@
     margin-bottom: 0.5rem;
 }
 
-.multimedia-header h2 .multimedia-word-start {
+#multimedia .multimedia-header h2 .multimedia-word-start,
+section#multimedia .multimedia-header h2 .multimedia-word-start {
     color: var(--primary-color);
 }
 
-.multimedia-header h2 .multimedia-word-end {
+#multimedia .multimedia-header h2 .multimedia-word-end,
+section#multimedia .multimedia-header h2 .multimedia-word-end {
     color: var(--secondary-color);
 }
 
-.multimedia-header h2::after {
+#multimedia .multimedia-header h2::after,
+section#multimedia .multimedia-header h2::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -78,177 +90,204 @@
     line-height: 1.6;
 }
 
-/* Carrusel Swiper */
-.multimedia-carousel-wrapper {
+/* Carrusel Multimedia - Swiper */
+#multimedia .ironweldSwiper,
+section#multimedia .ironweldSwiper {
     width: 100%;
-    padding: 2rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 5rem 1.5rem;
+    box-sizing: border-box;
+    overflow: hidden;
     position: relative;
 }
 
-.multimedia-swiper {
-    width: 90%;
-    padding: 3rem 0;
-    overflow: visible;
-    perspective: 600px; /* Perspectiva 3D para el efecto */
-}
-
-.multimedia-swiper .swiper-wrapper {
-    align-items: center;
+#multimedia .ironweldSwiper .swiper-wrapper,
+section#multimedia .ironweldSwiper .swiper-wrapper {
     transform-style: preserve-3d;
 }
 
-/* Triple Slider - Estilo UI Initiative */
-.multimedia-swiper .swiper-slide {
-    width: 500px; /* Ancho fijo para desktop */
-    height: auto;
-    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-                opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-                filter 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    opacity: 0.4;
-    transform: scale(0.75) translateZ(-100px);
-    filter: brightness(0.7);
-    will-change: transform, opacity, filter;
-}
-
-/* Slide central - más grande y destacado */
-.multimedia-swiper .swiper-slide-active {
-    opacity: 1 !important;
-    transform: scale(1) translateZ(0) !important;
-    z-index: 10;
-    filter: brightness(1);
-}
-
-/* Slide previo - visible parcialmente a la izquierda */
-.multimedia-swiper .swiper-slide-prev {
-    opacity: 0.5 !important;
-    transform: scale(0.8) translateX(-30%) translateZ(-50px) !important;
-    filter: brightness(0.6);
+#multimedia .ironweldSwiper .swiper-slide,
+section#multimedia .ironweldSwiper .swiper-slide {
+    text-align: center;
+    color: var(--text-color);
+    transition: transform 0.5s ease, opacity 0.5s ease, filter 0.5s ease;
+    width: 340px;
+    opacity: 1;
+    filter: brightness(0.4) saturate(0.8);
     z-index: 1;
+    transform: scale(0.95);
+}
+#multimedia .ironweldSwiper .swiper-slide h3 {
+    margin-top: 2rem;
 }
 
-/* Slide siguiente - visible parcialmente a la derecha */
-.multimedia-swiper .swiper-slide-next {
-    opacity: 0.5 !important;
-    transform: scale(0.8) translateX(30%) translateZ(-50px) !important;
-    filter: brightness(0.6);
-    z-index: 1;
-}
-
-.multimedia-slide-content {
-    width: 100%;
-    height: 500px; /* Altura aumentada para mejor visualización */
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3),
-                0 0 0 1px rgba(255, 255, 255, 0.1);
-    transition: box-shadow 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-}
-
-/* Sombra más pronunciada en el slide activo */
-.multimedia-swiper .swiper-slide-active .multimedia-slide-content {
-    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4),
-                0 0 0 1px rgba(255, 255, 255, 0.2);
-}
-
-.multimedia-slide-image {
-    width: 100%;
-    height: 100%;
+#multimedia .ironweldSwiper img,
+section#multimedia .ironweldSwiper img {
+    width: 100%;  
+    height: 280px;
     object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    transition: box-shadow 0.5s ease, filter 0.5s ease;
     display: block;
 }
 
-/* Botones de navegación personalizados */
-.multimedia-carousel-btn {
-    position: absolute;
+#multimedia .ironweldSwiper h3,
+section#multimedia .ironweldSwiper h3 {
+    margin: 10px 0 5px;
+    font-size: 1.2em;
+    font-weight: 700;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+#multimedia .ironweldSwiper p,
+section#multimedia .ironweldSwiper p {
+    font-size: 0.95em;
+    color: #666;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+#multimedia .ironweldSwiper .swiper-slide-active,
+section#multimedia .ironweldSwiper .swiper-slide-active {
+    width: 340px !important;
+    opacity: 1;
+    filter: brightness(1) saturate(1);
+    z-index: 3;
+    transform: scale(1);
+}
+
+#multimedia .ironweldSwiper .swiper-slide-active h3,
+#multimedia .ironweldSwiper .swiper-slide-active p,
+section#multimedia .ironweldSwiper .swiper-slide-active h3,
+section#multimedia .ironweldSwiper .swiper-slide-active p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#multimedia .ironweldSwiper .swiper-slide-next,
+section#multimedia .ironweldSwiper .swiper-slide-next,
+#multimedia .ironweldSwiper .swiper-slide-prev,
+section#multimedia .ironweldSwiper .swiper-slide-prev {
+    opacity: 0.8;
+    filter: brightness(0.4) saturate(0.8);
+    transform: scale(0.98);
+    z-index: 2;
+}
+
+#multimedia .ironweldSwiper .swiper-slide-active img,
+section#multimedia .ironweldSwiper .swiper-slide-active img {
+    height: 280px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+#multimedia .ironweldSwiper .swiper-slide-next img,
+#multimedia .ironweldSwiper .swiper-slide-prev img,
+section#multimedia .ironweldSwiper .swiper-slide-next img,
+section#multimedia .ironweldSwiper .swiper-slide-prev img {
+    height: 280px;
+}
+
+#multimedia .ironweldSwiper .swiper-button-next,
+#multimedia .ironweldSwiper .swiper-button-prev,
+section#multimedia .ironweldSwiper .swiper-button-next,
+section#multimedia .ironweldSwiper .swiper-button-prev {
+    color: #333;
+    font-weight: 700;
+    width: 44px;
+    height: 44px;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.9);
-    color: var(--secondary-color);
-    border: 2px solid var(--secondary-color);
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+    position: absolute;
+    z-index: 4;
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
-    z-index: 100;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    backdrop-filter: blur(10px);
 }
 
-.multimedia-carousel-btn:hover {
-    background-color: var(--secondary-color);
-    color: var(--white);
-    transform: translateY(-50%) scale(1.1);
-    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.25);
+#multimedia .ironweldSwiper .swiper-button-prev,
+section#multimedia .ironweldSwiper .swiper-button-prev {
+    left: 10px;
 }
 
-.multimedia-carousel-btn:active {
-    transform: translateY(-50%) scale(0.95);
+#multimedia .ironweldSwiper .swiper-button-next,
+section#multimedia .ironweldSwiper .swiper-button-next {
+    right: 10px;
 }
 
-.multimedia-carousel-btn i {
-    font-size: 24px;
+#multimedia .ironweldSwiper .swiper-button-next::after,
+#multimedia .ironweldSwiper .swiper-button-prev::after,
+section#multimedia .ironweldSwiper .swiper-button-next::after,
+section#multimedia .ironweldSwiper .swiper-button-prev::after {
+    font-size: 16px;
+    font-weight: 700;
 }
 
-.multimedia-swiper-prev {
-    left: 30px;
+#multimedia .ironweldSwiper .swiper-pagination-bullet,
+section#multimedia .ironweldSwiper .swiper-pagination-bullet {
+    background: #333;
+    opacity: 0.7;
 }
 
-.multimedia-swiper-next {
-    right: 30px;
+#multimedia .ironweldSwiper .swiper-pagination-bullet-active,
+section#multimedia .ironweldSwiper .swiper-pagination-bullet-active {
+    background: var(--secondary-color);
+    opacity: 1;
 }
+
 
 /* ============================================
    RESPONSIVE - TABLET
    ============================================ */
 @media (max-width: 992px) {
-    .multimedia {
+    #multimedia.multimedia,
+    section#multimedia.multimedia {
         padding: 50px 0;
+        height: auto;
+        min-height: 600px;
+        max-height: none;
     }
 
-    .multimedia-container {
+    #multimedia .multimedia-container,
+    section#multimedia .multimedia-container {
         padding: 0 15px;
     }
 
-    .multimedia-header {
-        margin-bottom: 2.5rem;
+    #multimedia .multimedia-header,
+    section#multimedia .multimedia-header {
+        margin-bottom: 1.5rem;
     }
 
-    .multimedia-header h2 {
+    #multimedia .multimedia-header h2,
+    section#multimedia .multimedia-header h2 {
         font-size: 2rem;
     }
 
-    .multimedia-header .intro-text {
+    #multimedia .multimedia-header .intro-text,
+    section#multimedia .multimedia-header .intro-text {
         font-size: 1rem;
     }
 
-    .multimedia-swiper .swiper-slide {
-        width: 400px; /* Ancho reducido para tablet */
+    #multimedia .ironweldSwiper,
+    section#multimedia .ironweldSwiper {
+        padding: 25px 40px 50px;
     }
 
-    .multimedia-slide-content {
-        height: 400px;
+    #multimedia .ironweldSwiper .swiper-slide,
+    section#multimedia .ironweldSwiper .swiper-slide {
+        width: 280px;
     }
 
-    .multimedia-carousel-btn {
-        width: 50px;
-        height: 50px;
-    }
-
-    .multimedia-carousel-btn i {
-        font-size: 20px;
-    }
-
-    .multimedia-swiper-prev {
-        left: 15px;
-    }
-
-    .multimedia-swiper-next {
-        right: 15px;
+    #multimedia .ironweldSwiper img,
+    section#multimedia .ironweldSwiper img {
+        height: 240px;
     }
 }
 
@@ -256,75 +295,122 @@
    RESPONSIVE - MÓVIL
    ============================================ */
 @media (max-width: 768px) {
-    .multimedia {
-        padding: 50px 0;
+    #multimedia.multimedia,
+    section#multimedia.multimedia {
+        padding: 40px 0;
+        height: auto;
+        min-height: 500px;
+        max-height: none;
     }
 
-    .multimedia-container {
+    #multimedia .multimedia-container,
+    section#multimedia .multimedia-container {
         padding: 0 15px;
     }
 
-    .multimedia-header {
-        margin-bottom: 2rem;
+    #multimedia .multimedia-header,
+    section#multimedia .multimedia-header {
+        margin-bottom: 1.5rem;
     }
 
-    .multimedia-header h2 {
+    #multimedia .multimedia-header h2,
+    section#multimedia .multimedia-header h2 {
         font-size: 1.75rem;
     }
 
-    .multimedia-header .intro-text {
+    #multimedia .multimedia-header .intro-text,
+    section#multimedia .multimedia-header .intro-text {
         font-size: 0.95rem;
     }
 
-    .multimedia-carousel-wrapper {
-        padding: 1.5rem 0;
+    #multimedia .ironweldSwiper,
+    section#multimedia .ironweldSwiper {
+        padding: 20px 30px 45px;
     }
 
-    .multimedia-swiper .swiper-slide {
-        width: 100%; /* Ancho completo para móvil */
+    #multimedia .ironweldSwiper .swiper-slide,
+    section#multimedia .ironweldSwiper .swiper-slide {
+        width: 100%;
+        opacity: 1;
+        filter: brightness(1) saturate(1);
+        transform: scale(1);
     }
 
-    .multimedia-slide-content {
-        height: 300px;
+    #multimedia .ironweldSwiper img,
+    section#multimedia .ironweldSwiper img {
+        height: 280px;
+        max-width: 100%;
     }
 
-    .multimedia-carousel-btn {
-        width: 45px;
-        height: 45px;
-    }
-
-    .multimedia-carousel-btn i {
-        font-size: 18px;
-    }
-
-    .multimedia-swiper-prev {
-        left: 10px;
-    }
-
-    .multimedia-swiper-next {
-        right: 10px;
-    }
-}
-
-@media (max-width: 480px) {
-    .multimedia-header h2 {
-        font-size: 1.5rem;
-    }
-
-    .multimedia-header .intro-text {
-        font-size: 0.9rem;
-    }
-
-    .multimedia-slide-content {
-        height: 250px;
-    }
-
-    .multimedia-carousel-btn {
+    #multimedia .ironweldSwiper .swiper-button-prev,
+    section#multimedia .ironweldSwiper .swiper-button-prev {
+        left:  8px;
         width: 40px;
         height: 40px;
     }
 
-    .multimedia-carousel-btn i {
-        font-size: 16px;
+    #multimedia .ironweldSwiper .swiper-button-next,
+    section#multimedia .ironweldSwiper .swiper-button-next {
+        right: 8px;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    #multimedia.multimedia,
+    section#multimedia.multimedia {
+        padding: 30px 0;
+        height: auto;
+        min-height: auto;
+        max-height: none;
+    }
+
+    #multimedia .multimedia-container,
+    section#multimedia .multimedia-container {
+        padding: 0 10px;
+    }
+
+    #multimedia .multimedia-header,
+    section#multimedia .multimedia-header {
+        margin-bottom: 1rem;
+    }
+
+    #multimedia .multimedia-header h2,
+    section#multimedia .multimedia-header h2 {
+        font-size: 1.3rem;
+    }
+
+    #multimedia .multimedia-header .intro-text,
+    section#multimedia .multimedia-header .intro-text {
+        font-size: 0.85rem;
+    }
+
+    #multimedia .ironweldSwiper,
+    section#multimedia .ironweldSwiper {
+        padding: 10px 15px 30px;
+    }
+
+    #multimedia .ironweldSwiper .swiper-slide,
+    section#multimedia .ironweldSwiper .swiper-slide {
+        width: 100%;
+        opacity: 1;
+        filter: brightness(1) saturate(1);
+        transform: scale(1);
+    }
+
+    #multimedia .ironweldSwiper img,
+    section#multimedia .ironweldSwiper img {
+        height: 220px;
+        max-width: 100%;
+    }
+
+    #multimedia .ironweldSwiper .swiper-button-prev,
+    #multimedia .ironweldSwiper .swiper-button-next,
+    section#multimedia .ironweldSwiper .swiper-button-prev,
+    section#multimedia .ironweldSwiper .swiper-button-next {
+        width: 32px;
+        height: 32px;
+        font-size: 12px;
     }
 }

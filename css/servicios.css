@@ -5,9 +5,9 @@
 .servicios {
     background-color: var(--white);
     padding: 50px 0 0;
-    min-height: calc(100vh - 82px);
-    height: calc(100vh - 82px);
-    max-height: calc(100vh - 82px);
+    min-height: unset;
+    height: calc(100vh - 80px);
+    max-height: 685px; 
     display: flex;
     flex-direction: column;
     position: relative;
@@ -188,7 +188,7 @@
 .servicios-footer {
     background-color: var(--secondary-color);
     width: 100%;
-    padding: 1.5rem 0rem;
+    padding: 1rem 0rem;
     border-radius: 0;
     opacity: 0;
     transform: translateY(30px);

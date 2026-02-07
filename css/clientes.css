@@ -1,0 +1,211 @@
+/* ============================================
+   SECCIÓN CLIENTES - GRID HORIZONTAL
+   ESTILOS COMPLETAMENTE INDEPENDIENTES
+   ============================================ */
+
+/* Encapsulación: Todos los estilos solo afectan a #clientes */
+.clientes {
+    background-color: var(--white);
+    padding: 50px 0;
+    min-height: unset;
+    height: auto;
+    max-height: none;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    scroll-margin-top: 0;
+    box-sizing: border-box;
+}
+
+/* Contenedor principal */
+.clientes-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Header: Título y Descripción */
+.clientes-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    opacity: 0;
+    transform: translateY(-30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.clientes-header.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.clientes-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    padding-bottom: 5px;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.clientes-header h2 .clientes-word-start {
+    color: var(--primary-color);
+}
+
+.clientes-header h2 .clientes-word-end {
+    color: var(--secondary-color);
+}
+
+.clientes-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: var(--secondary-color);
+    border-radius: 2px;
+}
+
+.clientes-header .intro-text {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-top: 0.75rem;
+    font-weight: 400;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+/* Grid Horizontal con Flex */
+.clientes-grid {
+    padding: 30px 0px 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 4rem;
+    box-sizing: border-box;
+}
+
+.cliente-logo {
+    width: 180px;
+    flex: 0 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.cliente-logo img {
+    width: 100%;
+    height: 80px;
+    transition: all 0.3s ease;
+    filter: brightness(0.7) saturate(0.9);
+    opacity: 0.6;
+    transform: scale(0.95);
+}
+
+.cliente-logo:hover img {
+    filter: brightness(1) saturate(1);
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ============================================
+   RESPONSIVE - TABLET
+   ============================================ */
+@media (max-width: 992px) {
+    .clientes {
+        padding: 40px 0;
+    }
+
+    .clientes-container {
+        padding: 0 15px;
+    }
+
+    .clientes-header {
+        margin-bottom: 2.5rem;
+    }
+
+    .clientes-header h2 {
+        font-size: 2rem;
+    }
+
+    .clientes-header .intro-text {
+        font-size: 1rem;
+    }
+
+    .clientes-grid {
+        padding: 25px 40px 50px;
+        gap: 25px;
+    }
+
+    .cliente-logo img {
+        max-width: 130px;
+        max-height: 70px;
+    }
+}
+
+/* ============================================
+   RESPONSIVE - MÓVIL
+   ============================================ */
+@media (max-width: 768px) {
+    .clientes {
+        padding: 40px 0;
+    }
+
+    .clientes-container {
+        padding: 0 15px;
+    }
+
+    .clientes-header {
+        margin-bottom: 2rem;
+    }
+
+    .clientes-header h2 {
+        font-size: 1.75rem;
+    }
+
+    .clientes-header .intro-text {
+        font-size: 0.95rem;
+    }
+
+    .clientes-grid {
+        padding: 20px 30px 45px;
+        gap: 20px;
+    }
+
+    .cliente-logo img {
+        max-width: 110px;
+        max-height: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .clientes-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .clientes-header .intro-text {
+        font-size: 0.9rem;
+    }
+
+    .clientes-grid {
+        padding: 15px 20px 40px;
+        gap: 15px;
+    }
+
+    .cliente-logo img {
+        max-width: 100px;
+        max-height: 50px;
+    }
+}

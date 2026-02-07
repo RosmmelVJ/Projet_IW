@@ -5,6 +5,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const multimediaSection = document.getElementById('multimedia');
     const multimediaHeader = document.querySelector('.multimedia-header');
+    const multimediaSwiper = document.querySelector('.ironweldSwiper');
     
     if (!multimediaSection || !multimediaHeader) {
         return;
@@ -49,55 +50,54 @@ document.addEventListener('DOMContentLoaded', function() {
 
     observer.observe(multimediaSection);
 
-    // Inicializar Swiper - Triple Slider (UI Initiative Style)
-    const multimediaSwiper = new Swiper('.multimedia-swiper', {
-        // Triple Slider: mostrar 3 slides con el central destacado
-        slidesPerView: 'auto', // Usar 'auto' para mejor control del tamaño
-        spaceBetween: 40,
-        centeredSlides: true,
-        
-        // Bucle infinito
-        loop: true,
-        loopAdditionalSlides: 2,
-        loopedSlides: 3,
-        
-        // Efecto de transición suave
-        effect: 'slide',
-        speed: 800,
-        
-        // Transiciones más suaves
-        grabCursor: true,
-        
-        // Mejorar el rendimiento
-        watchSlidesProgress: true,
-        watchSlidesVisibility: true,
-        
-        // Navegación
-        navigation: {
-            nextEl: '.multimedia-swiper-next',
-            prevEl: '.multimedia-swiper-prev',
-        },
-        
-        // Breakpoints responsive
-        breakpoints: {
-            // Desktop - Triple Slider
-            1024: {
-                slidesPerView: 'auto',
-                spaceBetween: 40,
-                centeredSlides: true,
+    if (multimediaSwiper && window.Swiper) {
+        new Swiper('.ironweldSwiper', {
+            loop: true,
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            loopedSlides: 7,
+            spaceBetween: 20,
+            speed: 600,
+            effect: 'slide',
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true
             },
-            // Tablet - Double Slider
-            768: {
-                slidesPerView: 'auto',
-                spaceBetween: 30,
-                centeredSlides: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+                dynamicBullets: true
             },
-            // Móvil - Single Slider
-            320: {
-                slidesPerView: 1,
-                spaceBetween: 20,
-                centeredSlides: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev'
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                    spaceBetween: 0,
+                    centeredSlides: true
+                },
+                480: {
+                    slidesPerView: 1,
+                    spaceBetween: 0,
+                    centeredSlides: true
+                },
+                768: {
+                    slidesPerView: 2.5,
+                    spaceBetween: 18
+                },
+                992: {
+                    slidesPerView: 3.5,
+                    spaceBetween: 20
+                },
+                1200: {
+                    slidesPerView: 'auto',
+                    spaceBetween: 20
+                }
             }
-        }
-    });
+        });
+    }
 });
