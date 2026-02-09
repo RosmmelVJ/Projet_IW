@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="css/productos.css">
     <link rel="stylesheet" href="css/multimedia.css">
     <link rel="stylesheet" href="css/clientes.css">
+    <link rel="stylesheet" href="css/contacto.css">
+    <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
@@ -417,11 +419,126 @@
     
     <!-- Sección Contacto -->
     <section id="contacto" class="section contacto">
-        <div class="container">
-            <h2>Contacto</h2>
-            <p>Ponte en contacto con nosotros.</p>
+        <!-- Fondo con imagen del banner -->
+        <div class="contacto-background">
+            <img src="img/contact/img-001.jpg" alt="Fondo contacto">
+        </div>
+
+        <div class="contacto-overlay"></div>
+
+        <div class="contacto-container">
+            <!-- Header de la sección -->
+            <div class="contacto-header">
+                <h2>
+                    <span class="contacto-word-start">CONTAC</span><span class="contacto-word-end">TO</span>
+                </h2>
+                <p class="intro-text">Si necesitas más información, asesoría técnica o una solución personalizada, nuestro equipo está disponible para ayudarte.</p>
+            </div>
+
+            <!-- Contenido principal: Formulario y Mapa -->
+            <div class="contacto-content">
+                <!-- Formulario -->
+                <div class="contacto-form-wrapper">
+                    <form class="contacto-form" id="contactoForm">
+                        <div class="form-group">
+                            <input type="text" id="nombre" name="nombre" placeholder="Nombre completo" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Correo electrónico" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="telefono" name="telefono" placeholder="Teléfono" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="mensaje" name="mensaje" placeholder="Tu mensaje..." rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-enviar">ENVIAR</button>
+                    </form>
+                </div>
+
+                <!-- Mapa y Horarios -->
+                <div class="contacto-map-wrapper">
+                    <div class="contacto-horarios">
+                        <h3>Horarios de Atención</h3>
+                        <p>Lunes a Viernes de 8 AM a 6 PM,&nbsp; Sábados de 8 AM a 12 PM</p>
+                    </div>
+                    <div class="contacto-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3904.8208449390686!2d-77.15030002537038!3d-11.84781093822748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105d53913612b61%3A0xfb16d5900179bcf!2sIRON%20WELD%20SAC!5e0!3m2!1ses!2spe!4v1770477746391!5m2!1ses!2spe" width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Información de contacto -->
+            <div class="contacto-info-boxes">
+                <!-- Caja 1: Teléfono -->
+                <div class="info-box">
+                    <div class="info-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="info-content">
+                        <h4>Teléfono</h4>
+                        <p>+51 975823673</p>
+                    </div>
+                </div>
+
+                <!-- Caja 2: Ubicación -->
+                <div class="info-box">
+                    <div class="info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="info-content">
+                        <h4>Ubicación</h4>
+                        <p>Mz G Lt 20, La victoria II sector</p>
+                    </div>
+                </div>
+
+                <!-- Caja 3: Email -->
+                <div class="info-box">
+                    <div class="info-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="info-content">
+                        <h4>Correo Electrónico</h4>
+                        <p>IronWeld@gmail.com</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
+
+    <!-- Sección Footer -->
+    <footer id="footer" class="footer">
+        <div class="footer-container">
+            <!-- Texto "Síguenos en" -->
+            <div class="footer-header">
+                <h3>Síguenos en</h3>
+            </div>
+
+            <!-- Iconos de Redes Sociales -->
+            <div class="social-media">
+                <a href="https://www.facebook.com/profile.php?id=100005774838818" target="_blank" rel="noopener noreferrer" class="social-icon facebook" title="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/ironweld.peru/" target="_blank" rel="noopener noreferrer" class="social-icon instagram" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com/company/104172141/admin/notifications/all/" target="_blank" rel="noopener noreferrer" class="social-icon linkedin" title="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://youtube.com/@ironweld3992?si=Wunctb6wQmcoH43Q" target="_blank" rel="noopener noreferrer" class="social-icon youtube" title="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://www.tiktok.com/@ironweld.sac?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer" class="social-icon tiktok" title="TikTok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer-copyright">
+                <p>&copy; Copyright 2024 IronWeLd. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
 
     <script src="js/script.js"></script>
     <script src="js/nosotros.js"></script>
@@ -430,6 +547,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/multimedia.js"></script>
     <script src="js/clientes.js"></script>
+    <script src="js/contacto.js"></script>
 </body>
 </html>
 
